@@ -44,6 +44,11 @@ function basetheme_setup() {
         'footermenu' => esc_html__('Footer Menu', 'basetheme'),
     ));
 
+    // Woocommerce
+    add_theme_support('wc-product-gallery-lightbox');
+    //add_theme_support('wc-product-gallery-zoom');
+    //add_theme_support('wc-product-gallery-slider');
+
   /* block pattern */
   require_once( get_template_directory() . '/functions/patterns.php' );
 
