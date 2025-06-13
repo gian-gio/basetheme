@@ -1,8 +1,17 @@
 <?php get_header(); ?>
 
-<div class="grid--xl">
-    <div class="shop-container">
+
+<div class="title-shop">
+    <div class="grid--xl">
         <h1><?php woocommerce_page_title(); ?></h1>
+    </div>
+</div>
+
+
+<div class="grid--xl">
+
+
+    <div class="shop-container">
         
         <div class="shop-products">
 

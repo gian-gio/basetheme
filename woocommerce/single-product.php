@@ -1,7 +1,12 @@
 <?php get_header(); ?>
 
+<div class="product-breadcrumbs">
+    <div class="grid--xl">
+        <?php woocommerce_breadcrumb(); ?>
+    </div>
+</div>
 
-<div class="product-container">
+<div class="grid--xl">
     <?php while (have_posts()) : the_post(); ?>
         <div class="product-content">
             <div class="product-image">
