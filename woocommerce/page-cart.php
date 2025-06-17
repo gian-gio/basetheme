@@ -4,7 +4,7 @@ Template Name: Custom Cart Page
 
 */ ?>
 
-
+<?php get_header(); ?>
 
 <div class="title-shop">
     <div class="grid--xl">
