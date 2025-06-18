@@ -59,27 +59,51 @@ add_action('after_setup_theme', 'basetheme_setup');
 
 
 // WooCommerce support
-function basetheme_add_woocommerce_support() {
-  add_theme_support('woocommerce');
-}
-add_action('after_setup_theme', 'basetheme_add_woocommerce_support');
+add_theme_support( 'woocommerce' );
 
 function basetheme_woocommerce_cart_menu_item($items, $args) {
-    // Aggiungi solo al menu con 'theme_location' = 'quickmenu'
-    if ($args->theme_location === 'quickmenu' && class_exists('WooCommerce') && get_theme_mod('basetheme_show_cart', true)) {
-        $cart_count = WC()->cart->get_cart_contents_count();
-        $cart_url = wc_get_cart_url();
+    if ($args->theme_location === 'quickmenu' && class_exists('WooCommerce')) {
 
-        $items .= '<li class="cart-item">
-            <a href="' . esc_url($cart_url) . '">
-                <i class="bx bx-cart-alt"></i> 
-                <span class="cart-count">' . esc_html($cart_count) . '</span>
-            </a>
-        </li>';
+        // Mostra icona account
+        $account_url = esc_url(wc_get_page_permalink('myaccount'));
+
+        if (is_user_logged_in()) {
+            // Utente loggato → link diretto alla dashboard
+            $items .= '<li class="account-item">
+                <a href="' . $account_url . '">
+                    <i class="bx bxs-user"></i>
+                </a>
+            </li>';
+        } else {
+            // Utente non loggato → link alla login (stessa pagina WooCommerce)
+            $items .= '<li class="account-item">
+                <a href="' . $account_url . '">
+                    <i class="bx bxs-user"></i>
+                </a>
+            </li>';
+        }
+
+        
+        // Mostra icona carrello
+        if (get_theme_mod('basetheme_show_cart', true)) {
+            $cart_count = WC()->cart->get_cart_contents_count();
+            $cart_url = wc_get_cart_url();
+
+            $items .= '<li class="cart-item">
+                <a href="' . esc_url($cart_url) . '">
+                    <i class="bx bx-cart-alt"></i> 
+                    <span class="cart-count">' . esc_html($cart_count) . '</span>
+                </a>
+            </li>';
+        }
+
     }
+
     return $items;
 }
 add_filter('wp_nav_menu_items', 'basetheme_woocommerce_cart_menu_item', 10, 2);
+
+
 
 function basetheme_customize_register($wp_customize) {
   // Aggiungi una sezione WooCommerce
@@ -205,6 +229,7 @@ function basetheme_styles() {
 	wp_enqueue_style( 'boxicons-style', 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
 	wp_enqueue_style( 'lineawesome-style', 'https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css');
 	wp_enqueue_style( 'splide-style', get_template_directory_uri().'/css/splide.css');
+	wp_enqueue_style( 'woocommerce-style', get_template_directory_uri().'/css/woocommerce.css');
 	wp_enqueue_style( 'simple-style', get_template_directory_uri().'/style.css');
 
 }
