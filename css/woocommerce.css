@@ -2,6 +2,9 @@
 /* ! WooCommerce Style  */
 /* -------------------------------------------------------------------------------- */
 
+.woocommerce h2{
+  font-size: 1.8rem;
+}
 
 .woocommerce .button{
   border-radius: 0px!important;
@@ -502,6 +505,18 @@
   font-family: var(--font-default)!important;
 }
 
+.woocommerce-form-login input[type=text], .woocommerce-form-login input[type=email], .woocommerce-form-login input[type=tel], .woocommerce-form-login input[type=password]{
+  height: 50px!important;
+  margin-bottom: 10px;
+  border:1px solid #CCC!important;
+  border-radius:0px!important;
+  padding:0 10px!important;
+  font-size: 1rem!important;
+  color: var(--color-default)!important;
+  font-family: var(--font-default)!important;
+}
+
+
 .woocommerce-address-fields button[type=submit]{
   min-width: 200px;
   height: 50px;
@@ -523,7 +538,31 @@
 }
 
 
+.woocommerce-form-login button[type=submit]{
+  min-width: 200px;
+  height: 50px;
+  background-color: var(--color-green)!important;
+  color: var(--color-white);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--font-medium);
+  border:0px none;
+  margin-top:15px;
+  margin-bottom: 10px;
+  margin-left:0;
+  transition: .3s all;
+}
 
+.woocommerce-form-login button[type=submit]:hover{
+  color: var(--color-white);
+}
+
+
+
+.woocommerce-form-login__rememberme{
+  margin-top: 24px;
+}
 
 .checkout-container select{
   margin-bottom: 10px;
@@ -649,4 +688,49 @@
 .woocommerce-MyAccount-content p{
   padding: 0 10px;
   margin-bottom:30px;
+}
+
+.woocommerce form.login{
+  position:relative;
+  border: 0px none;
+  padding: 0;
+}
+
+.woocommerce form.login p{
+  width: 40%;
+}
+
+.woocommerce form.login::after{
+  content: " ";
+  width: 55%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../icons/icn-key.png);
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 300px;
+  opacity: .2;
+}
+
+@media (max-width: 768px) {
+
+  .woocommerce form.login::after{
+    display: none;
+  }
+
+  .woocommerce form.login p{
+  width: 100%;
+  }
+
+  .my-account-container{
+    padding: 20px;
+  }
+
+
 }
