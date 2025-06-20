@@ -12,20 +12,42 @@
 }
 
 .woocommerce-info{
-  border-top-color: var(--color-secondary)!important;
+  padding:30px;
+  margin:0;
+  background-color:transparent!important;
+  color:var(--color-default);
+  border-top: 0px none;
+  text-align: center;
+  border: 1px solid var(--color-grey-light);
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
 }
 
-.woocommerce-info::before{
-  color: var(--color-secondary)!important;
+.cart-empty.woocommerce-info{
+  justify-content:center;
+}
+
+.woocommerce-info::after, .woocommerce-info::before{
+  display: none;
 }
 
 .woocommerce-message{
   border-top-color: var(--color-green)!important;
 }
 
-.woocommerce-message::before{
-  color: var(--color-green)!important;
+.woocommerce-message{
+  border-top:0px none;
+  border: 1px solid var(--color-green);
+  background-color: transparent!important;
+  outline: none;
 }
+
+.woocommerce-message::before {
+  color: var(--color-green);
+}
+
 
 
 .cart-item a{
@@ -516,6 +538,16 @@
   font-family: var(--font-default)!important;
 }
 
+.woocommerce-EditAccountForm input[type=text], .woocommerce-EditAccountForm input[type=email], .woocommerce-EditAccountForm input[type=tel], .woocommerce-EditAccountForm input[type=password]{
+  height: 50px!important;
+  margin-bottom: 10px;
+  border:1px solid #CCC!important;
+  border-radius:0px!important;
+  padding:0 10px!important;
+  font-size: 1rem!important;
+  color: var(--color-default)!important;
+  font-family: var(--font-default)!important;
+}
 
 .woocommerce-address-fields button[type=submit]{
   min-width: 200px;
@@ -559,9 +591,43 @@
 }
 
 
+.woocommerce-EditAccountForm button[type=submit]{
+  min-width: 200px;
+  height: 50px;
+  background-color: var(--color-green)!important;
+  color: var(--color-white);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--font-medium);
+  border:0px none;
+  margin-top:15px;
+  margin-bottom: 10px;
+  margin-left: -8px;
+  transition: .3s all;
+}
+
+.woocommerce-EditAccountForm button[type=submit]:hover{
+  color: var(--color-white);
+}
+
+
+.woocommerce-EditAccountForm fieldset{
+  border: 0px none;
+  margin-top: 30px;
+}
+
+.woocommerce-EditAccountForm legend{
+  font-weight: var(--font-semi-bold);
+  margin:0 0 15px 3px;
+}
 
 .woocommerce-form-login__rememberme{
   margin-top: 24px;
+}
+
+.woocommerce-EditAccountForm em{
+  font-size: 0.8rem;
 }
 
 .checkout-container select{
@@ -632,7 +698,7 @@
 }
 
 .woocommerce-order-details__title, .woocommerce-column__title{
-  font-size: 1.4rem;
+  font-size: 1.4rem!important;
   margin-bottom: 15px;
 }
 
@@ -717,6 +783,11 @@
   background-size: 300px;
   opacity: .2;
 }
+
+.page-template-page-checkout .woocommerce form.login::after{
+  background-image: none;
+}
+
 
 @media (max-width: 768px) {
 
