@@ -186,24 +186,48 @@
 }
 
 .woocommerce ul.products li.product .button{
-  background-color: var(--color-default);
-  color: var(--color-primary);
-  font-size: 0.85rem;
+  background-color: var(--color-primary);
+  color: var(--color-default);
+  font-size: 0.70rem!important;
   font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .woocommerce span.onsale{
-  background-color: var(--color-red);
-  width: 70px;
-  height: 70px;
-  border-radius: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  top: 10px!important;
-  right: 10px!important;
+    background-color: var(--color-red);
+    width: 90px;
+    min-height: 20px!important;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    top: 6px !important;
+    right: 6px !important;
+    padding: 0px!important;
+    line-height: 30px;
+  }
+
+.out-of-stock-label {
+    position: absolute;
+    background-color: var(--color-grey);
+    color: var(--color-white);
+    width: 120px;
+    min-height: 20px!important;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    top: 0px !important;
+    right: 0px !important;
+    padding: 0px!important;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 700;
 }
+
 
 .product-container {
   max-width: 1200px;
@@ -499,10 +523,19 @@
   height: 50px;
   background-color: var(--color-primary);
   color: var(--color-default);
+  font-size: 0.75rem!important;
+  letter-spacing: 1px;
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
 }
 .woocommerce button.button.alt:hover{
   background-color: var(--color-primary);
   color: var(--color-default);
+}
+
+.woocommerce .quantity .qty{
+  height:48px;
+  font-size: 0.9rem;
 }
 
 .checkout-container input[type=text], .checkout-container input[type=email], .checkout-container input[type=tel], .checkout-container input[type=password]{
@@ -786,6 +819,10 @@
 
 .page-template-page-checkout .woocommerce form.login::after{
   background-image: none;
+}
+
+.woocommerce-Address-title .edit {
+  font-size: 0.9rem;
 }
 
 
