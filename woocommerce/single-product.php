@@ -7,6 +7,8 @@
 </div>
 
 <div class="grid--xl">
+    
+    <!--Single Procuct-->
     <?php while (have_posts()) : the_post(); ?>
         <div class="product-content">
             <div class="product-image">
@@ -20,6 +22,18 @@
             </div>
         </div>
     <?php endwhile; ?>
+
+    <!--Related product-->
+    <div class="related-products">
+            <?php
+            woocommerce_related_products(array(
+                'posts_per_page' => 4, // Numero di prodotti
+                'columns'        => 4, // Colonne per riga
+            ));
+            ?>
+    </div>
+
+
 </div>
 
 <?php get_footer(); ?>

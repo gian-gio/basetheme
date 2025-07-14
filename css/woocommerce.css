@@ -153,6 +153,11 @@
   width: 80%;
 }
 
+.related.products{
+  width: 100%!important;
+}
+
+
 .product{
   width: 100%;
 }
@@ -192,6 +197,11 @@
   font-weight: var(--font-semi-bold);
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+
+.outofstock > .product_type_simple{
+  display: none!important;
 }
 
 .woocommerce span.onsale{
@@ -244,6 +254,21 @@
 .product-image{
   width: 40%;
   margin-right: 30px;
+}
+
+.related-products{
+  border-top: 1px solid var(--color-grey-light);
+  padding-top: 30px;
+}
+
+.related-products h2{
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.related-products .products{
+  width: 100%;
 }
 
 @media (max-width: 768px) {
